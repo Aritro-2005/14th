@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<!-- ✅ MOBILE VIEWPORT -->
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Valentine 💖</title>
+
+<style>
+    body {
+        margin: 0;
+        min-height: 100vh;
+        background: #f6efe7;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'Poppins', sans-serif;
+        padding: 10px;
+    }
+
+    .card {
+        width: 90%;
+        max-width: 500px;
+        background: #ffc0cb;
+        border-radius: 20px;
+        padding: 25px;
+        text-align: center;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        display: none;
+    }
+
+    .card.active {
+        display: block;
+    }
+
+    img {
+        width: 120px;
+        max-width: 100%;
+        border-radius: 20px;
+        margin-bottom: 15px;
+    }
+
+    h1 {
+        margin: 10px 0;
+        color: #4b1e1e;
+        font-size: 26px;
+    }
+
+    p {
+        color: #5a2c2c;
+        font-size: 15px;
+    }
+
+    .buttons {
+        margin-top: 25px;
+    }
+
+    button {
+        border: none;
+        padding: 12px 30px;
+        border-radius: 25px;
+        font-size: 16px;
+        cursor: pointer;
+        margin: 8px;
+        max-width: 100%;
+    }
+
+    .yes {
+        background: red;
+        color: white;
+    }
+
+    .no {
+        background: blue;
+        color: white;
+        position: relative;
+    }
+
+    .big-yes {
+        font-size: 30px;
+        padding: 20px 80px;
+        border-radius: 50px;
+    }
+
+    /* ✅ MOBILE ADJUSTMENTS */
+    @media (max-width: 600px) {
+        h1 {
+            font-size: 22px;
+        }
+
+        p {
+            font-size: 14px;
+        }
+
+        img {
+            width: 90px;
+        }
+
+        button {
+            font-size: 14px;
+            padding: 10px 22px;
+        }
+
+        .big-yes {
+            font-size: 22px;
+            padding: 15px 45px;
+        }
+    }
+</style>
+</head>
+
+<body>
+
+<!-- PAGE 1 -->
+<div class="card active" id="page1">
+    <img src="https://i.pinimg.com/originals/95/41/a2/9541a2f0cdb82957d122a1ce07498f5c.gif">
+    <h1>Will you be mine 🥺</h1>
+    <p>Life is an incredible journey, and I want to spend every second of it with you.</p>
+    <div class="buttons">
+        <button class="yes" onclick="nextPage(1)">YES</button>
+        <button class="no" onmouseover="moveNo(this)">NO</button>
+    </div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="card" id="page2">
+    <img src="https://i.pinimg.com/originals/1f/a6/36/1fa636e1b8bcfd5d7f03924218a9977a.gif">
+    <h1>Think again 😭</h1>
+    <p>You are the most special person in my life. I can't imagine my life without you.</p>
+    <div class="buttons">
+        <button class="yes" onclick="nextPage(2)">YES</button>
+        <button class="no" onmouseover="moveNo(this)">NO</button>
+    </div>
+</div>
+
+<!-- PAGE 3 -->
+<div class="card" id="page3">
+    <img src="https://i.pinimg.com/736x/3e/5b/16/3e5b16e0e3f61edd7b80fcd141ed31ab.jpg">
+    <h1>See This 😢</h1>
+    <div class="buttons">
+        <button class="yes big-yes" onclick="nextPage(3)">YES.</button>
+    </div>
+</div>
+
+<!-- PAGE 4 -->
+<div class="card" id="page4">
+    <img src="https://i.pinimg.com/1200x/16/27/c9/1627c9257dec51bfe3155b95f5d6d1c1.jpg">
+    <h1>Happy Valentine Day my moni 💍</h1>
+    <p>Every second with you is a celebration. You are the spark that makes my world brighter 💕</p>
+    <div class="buttons">
+        <button class="yes">I love you so much my gulab jamun ❤️</button>
+    </div>
+</div>
+
+<script>
+function nextPage(current) {
+    document.getElementById("page" + current).classList.remove("active");
+    document.getElementById("page" + (current + 1)).classList.add("active");
+}
+
+function moveNo(btn) {
+    const x = Math.random() * 120 - 60;
+    const y = Math.random() * 60 - 30;
+    btn.style.transform = `translate(${x}px, ${y}px)`;
+}
+</script>
+
+</body>
+</html>
